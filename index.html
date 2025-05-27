@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-decoration">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <i class="fas fa-brain logo-icon"></i>
+                <h1 class="game-title">Memory Card Game</h1>
+            </div>
+            <div class="header-controls">
+                <button id="toggle-scores" class="toggle-button">
+                    <i class="fas fa-trophy toggle-icon"></i>
+                    High Scores
+                </button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="game-container">
+                <div class="game-info">
+                    <div class="controls-wrapper">
+                        <button id="start" class="pulse-button">
+                            <i class="fas fa-play"></i>
+                            <span>Start Game</span>
+                        </button>
+                        <select id="difficulty">
+                            <option value="" disabled selected>Difficulty</option>
+                            <option value="easy">Easy (4x4)</option>
+                            <option value="medium">Medium (6x6)</option>
+                            <option value="hard">Hard (8x8)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="current-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-walking stat-icon"></i>
+                        <span class="stat-label">Moves:</span>
+                        <span id="moves-count" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-clock stat-icon"></i>
+                        <span class="stat-label">Time:</span>
+                        <span id="time" class="stat-value">00:00</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-star stat-icon"></i>
+                        <span class="stat-label">Score:</span>
+                        <span id="current-score" class="stat-value">0</span>
+                    </div>
+                </div>
+
+                <div class="game-board" id="game-board">
+                    <!-- Cards will be generated here by JavaScript -->
+                </div>
+            </div>
+
+            <div class="high-scores-sidebar" id="high-scores-sidebar">
+                <div class="high-scores">
+                    <div class="sidebar-header">
+                        <h2><i class="fas fa-trophy"></i> High Scores</h2>
+                        <button class="close-sidebar">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="score-list">
+                        <div class="score-item">
+                            <span class="difficulty-label">
+                                <i class="fas fa-star"></i> Easy
+                            </span>
+                            <span id="easy-high-score" class="score-value">-</span>
+                        </div>
+                        <div class="score-item">
+                            <span class="difficulty-label">
+                                <i class="fas fa-star"></i> Medium
+                            </span>
+                            <span id="medium-high-score" class="score-value">-</span>
+                        </div>
+                        <div class="score-item">
+                            <span class="difficulty-label">
+                                <i class="fas fa-star"></i> Hard
+                            </span>
+                            <span id="hard-high-score" class="score-value">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <p>Made with <i class="fas fa-heart"></i> for memory training</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div id="results-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-trophy"></i> Game Results</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="result-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="result-message">
+                    <h3>Congratulations!</h3>
+                    <p class="game-stats"></p>
+                    <p class="score-display"></p>
+                    <p class="high-score-message"></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="play-again-btn">
+                    <i class="fas fa-redo"></i> Play Again
+                </button>
+                <button class="close-btn">
+                    <i class="fas fa-times"></i> Close
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
